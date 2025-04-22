@@ -1,0 +1,4 @@
+Description: 'Правило предназначено для обнаружения подозрительной активности, связанной с использованием утилиты wmic.exe для создания или получения информации о процессах.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_1_10_03'
+    EventDescription: 'Запущен {object.process.name} на узле {event_src.host}.'
