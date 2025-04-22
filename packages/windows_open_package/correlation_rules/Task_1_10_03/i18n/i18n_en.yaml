@@ -1,0 +1,4 @@
+Description: 'This rule is designed to detect suspicious activity related to the use of wmic.exe for process creation or enumeration.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_1_10_03'
+    EventDescription: '{object.process.name} was executed on the host {event_src.host}.'
