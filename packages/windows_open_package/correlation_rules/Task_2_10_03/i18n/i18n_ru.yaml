@@ -1,0 +1,4 @@
+Description: 'Правило предназначено для обнаружения подозрительной активности, связанной с использованием инструмента Mimikatz. Также правило обнаруживает как непосредственный запуск mimikatz.exe, так и его PowerShell-версии (Invoke-Mimikatz).'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_2_10_03'
+    EventDescription: 'Обнаружена подозрительная активность, связанная с Mimikatz ({object.process.name}) на узле {event_src.host}. Командная строка: {object.process.cmdline}'

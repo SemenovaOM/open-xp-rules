@@ -1,0 +1,28 @@
+ContentAutoName: Task_2_10_03
+ExpertContext:
+  Created: 23.04.2025
+  Updated: 23.04.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Use in monitoring and detection systems to identify Mimikatz execution
+    - Use to check for suspicious tools in high security environments
+  Falsepositives:
+    - Legitimate operations of administrators using Mimikatz to diagnose a system
+    - A testing system that uses Mimikatz for training purposes
+  References:
+    - https://github.com/gentilkiwi/mimikatz
+  Improvements:
+    - Refining parameters to minimize false positives
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-864319434
+EventDescriptions:
+  - Criteria: correlation_name = "Task_2_10_03"
+    LocalizationId: corrname_Task_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      credential-access:
+        - T1003
