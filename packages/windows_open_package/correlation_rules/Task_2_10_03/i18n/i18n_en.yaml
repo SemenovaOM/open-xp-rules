@@ -1,0 +1,4 @@
+Description: 'The rule is designed to detect suspicious activity related to the use of the Mimikatz tool. The rule also detects both the direct launch of mimikatz.exe and its PowerShell version (Invoke-Mimikatz).'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_2_10_03'
+    EventDescription: 'Detected suspicious Mimikatz-related activity ({object.process.name}) on host {event_src.host}. Command line: {object.process.cmdline}'
