@@ -1,0 +1,33 @@
+ContentAutoName: Task_5_1_2_10_03
+ExpertContext:
+  Created: 09.05.2025
+  Updated: 09.05.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detect unauthorized use of credential dumping tools.
+    - Investigate memory artifacts post-breach.
+    - Identify stealthy execution methods (e.g., via `rundll32.exe`).
+  Falsepositives:
+    - Use of `procdump.exe` for system diagnostics.
+    - Legitimate use of `dbghelp.dll` in applications.
+    - Antivirus scanners with signatures similar to detection patterns.
+  References:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+    - https://github.com/outflanknl/Dumpert
+  Improvements:
+    - Add digital signature checks (e.g., exclude Microsoft-signed files).
+    - Exclude trusted paths (e.g., `C:\IT_Tools\`).
+    - Use IOC lists to validate process hashes.
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-932917605
+EventDescriptions:
+  - Criteria: correlation_name = "Task_5_1_2_10_03"
+    LocalizationId: corrname_Task_5_1_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      credential-access:
+        - T1003.001

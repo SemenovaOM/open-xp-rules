@@ -1,0 +1,32 @@
+ContentAutoName: Task_5_3_2_10_03
+ExpertContext:
+  Created: 09.05.2025
+  Updated: 10.05.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detecting persistence via delayed Group Policy execution.
+    - Identifying hijacking of .reg file handlers for automated exploitation.
+    - Uncovering unauthorized registry changes linked to GPO tampering.
+  Falsepositives:
+    - Legitimate GPO administration via manual registry editing (rare cases).
+    - Configuration of .reg file associations by legitimate software.
+    - Use of INF files in ProgramData for automated deployment tasks.
+  References:
+    - https://learn.microsoft.com/en-us/windows-hardware/drivers/install/general-syntax-rules-for-inf-files
+  Improvements:
+    - Exclude changes made by trusted processes (e.g., gpedit.msc).
+    - Validate digital signatures of INF files in ProgramData.
+    - Integrate with Threat Intelligence to analyze the contents of gpo.inf.
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-426580451
+EventDescriptions:
+  - Criteria: correlation_name = "Task_5_3_2_10_03"
+    LocalizationId: corrname_Task_5_3_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      privilege-escalation:
+        - T1484

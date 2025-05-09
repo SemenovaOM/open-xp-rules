@@ -1,0 +1,4 @@
+Description: 'Обнаружение попыток кражи учетных данных (логинов, хешей, токенов) через дамп памяти процесса lsass.exe. Правило детектирует как прямой запуск вредоносных утилит, так и скрытые методы выполнения (например, через PowerShell или DLL-инъекции).'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_5_1_2_10_03'
+    EventDescription: 'Обнаружена подозрительная активность, связанная с Credential Dumping ({object.process.name}) на узле {event_src.host}.  Командная строка: {object.process.cmdline}'
