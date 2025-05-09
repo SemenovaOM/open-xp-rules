@@ -1,0 +1,33 @@
+ContentAutoName: Task_5_2_2_10_03
+ExpertContext:
+  Created: 09.05.2025
+  Updated: 09.05.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detect lateral movement via forged Kerberos tickets.
+    - Identify LSASS memory extraction via TSSSP exploitation.
+    - Uncover hidden C2 channels using named pipes.
+  Falsepositives:
+    - Legitimate penetration testing using Kekeo/TSSSP tools.
+    - Applications creating pipes with "kerberos" or "credential" in names for valid purposes.
+    - Security tools performing Kerberos diagnostics.
+    - Antivirus/EDR solutions injecting DLLs into LSASS.
+  References:
+    - https://github.com/gentilkiwi/kekeo
+  Improvements:
+    - Exclude Microsoft-signed processes accessing LSASS.
+    - Validate process hashes against threat intelligence feeds.
+    - Cross-check pipe names with C2 infrastructure databases.
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-236326304
+EventDescriptions:
+  - Criteria: correlation_name = "Task_5_2_2_10_03"
+    LocalizationId: corrname_Task_5_2_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      credential-access:
+        - T1558

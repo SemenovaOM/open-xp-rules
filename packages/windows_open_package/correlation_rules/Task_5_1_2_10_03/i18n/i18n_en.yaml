@@ -1,0 +1,4 @@
+Description: 'The rule is designed to detect credential theft attempts via LSASS memory dumps. The rule detects both direct execution of malicious utilities and stealth techniques (e.g., PowerShell or DLL injections).'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_5_1_2_10_03'
+    EventDescription: 'Detected Credential Dumping activity ({object.process.name}) on host {event_src.host}.  Command line: {object.process.cmdline}'

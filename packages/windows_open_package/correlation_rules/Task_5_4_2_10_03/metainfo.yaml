@@ -1,0 +1,30 @@
+ContentAutoName: Task_5_4_2_10_03
+ExpertContext:
+  Created: 10.05.2025
+  Updated: 10.05.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Monitor for unauthorized execution of custom binaries in non-standard directories.
+    - Detect potential malware masquerading as legitimate processes (e.g., SearchIndexer).
+  Falsepositives:
+    - Legitimate developers testing custom tools named POC.exe in the Public directory.
+    - Automated scripts or CI/CD pipelines executing POC.exe during build/deployment processes.
+  References: []
+  Improvements:
+    - Add checks for file hashes (SHA256, IMPHASH) to reduce false positives.
+    - Incorporate metadata analysis (e.g., Description or Product fields) to identify masquerading.
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-209796817
+EventDescriptions:
+  - Criteria: correlation_name = "Task_5_4_2_10_03"
+    LocalizationId: corrname_Task_5_4_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      defense-evasion:
+        - T1036
+      execution:
+        - T1059.003
