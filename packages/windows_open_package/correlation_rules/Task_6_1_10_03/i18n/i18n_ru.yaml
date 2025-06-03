@@ -1,0 +1,4 @@
+Description: 'Обнаружена потенциально вредоносная попытка загрузки неподписанной DLL из подозрительного каталога (например, Downloads, Temp, RAR/ZIP), либо через подозрительные метаданные.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_1_10_03'
+    EventDescription: 'Обнаружено подозрительное событие загрузки DLL-библиотеки на хосте {event_src.host}. Путь к модулю: {object.process.path}.'

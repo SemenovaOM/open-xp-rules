@@ -1,0 +1,4 @@
+Description: 'Обнаружена попытка сохранения учетных данных с помощью cmdkey.exe.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_2_2_10_03'
+    EventDescription: 'Обнаружено подозрительное использование утилиты cmdkey.exe для сохранения учетных данных в Credential Manager на хосте {event_src.host}. Командная строка: {object.process.cmdline}'

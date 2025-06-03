@@ -1,0 +1,32 @@
+ContentAutoName: Task_6_3_2_10_03
+ExpertContext:
+  Created: 03.06.2025
+  Updated: 03.06.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detect persistence attempts via Startup folder manipulation
+    - Identify potentially malicious payloads that auto-execute on logon
+    - Correlate with other events such as unusual PowerShell/cmd usage or network beaconing
+  Falsepositives:
+    - Legitimate software or scripts configured to run at startup
+    - User-created batch/scripts for automation purposes
+    - Deployment tools or enterprise management systems placing startup items
+  References:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-11-file-create
+  Improvements:
+    - Add whitelisting capability for known legitimate startup files or publishers
+    - Integrate process ancestry detection
+    - Enrich with file reputation or hash lookup
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-213807926
+EventDescriptions:
+  - Criteria: correlation_name = "Task_6_3_2_10_03"
+    LocalizationId: corrname_Task_6_3_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      persistence:
+        - T1547.001

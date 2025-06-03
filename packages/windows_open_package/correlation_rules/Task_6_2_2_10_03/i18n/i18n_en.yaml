@@ -1,0 +1,4 @@
+Description: 'Detects an attempt to store credentials using cmdkey.exe outside the context of system processes.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_2_2_10_03'
+    EventDescription: 'A suspicious usage of the cmdkey.exe utility for storing credentials in Credential Manager was detected on host {event_src.host}. Command line: {{object.process.cmdline}}'
