@@ -1,0 +1,4 @@
+Description: 'Detects a potentially malicious attempt to load an unsigned DLL from a suspicious directory (e.g., Downloads, Temp, inside RAR/ZIP), or with suspicious metadata.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_1_10_03'
+    EventDescription: 'A suspicious DLL loading event was detected on host {event_src.host}. Module path: {{object.process.path}}.'

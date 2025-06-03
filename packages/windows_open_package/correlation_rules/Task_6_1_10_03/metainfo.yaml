@@ -1,0 +1,32 @@
+ContentAutoName: Task_6_1_10_03
+ExpertContext:
+  Created: 22.05.2025
+  Updated: 03.06.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detect attempts to evade detection mechanisms using DLL side-loading
+    - Identify suspicious module loads from temporary or compressed locations
+    - Monitor for usage of unsigned or poorly attributed binaries in execution chains
+  Falsepositives:
+    - Legitimate applications that load unsigned DLLs for compatibility reasons
+    - Developer tools or scripting engines using unpacked modules from user directories
+    - Packaged applications extracting and loading DLLs from ZIP/RAR archives during normal operation
+  References:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon?spm=a2ty_o01.29997173.0.0.5b0cc921pMU0TB#event-id-7-image-loaded
+  Improvements:
+    - Add whitelisting of known legitimate software paths and publishers
+    - Enhance detection accuracy by incorporating process ancestry / parent-child chain analysis
+    - Consider enriching with file reputation checks
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-498776622
+EventDescriptions:
+  - Criteria: correlation_name = "Task_6_1_10_03"
+    LocalizationId: corrname_Task_6_1_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      defense-evasion:
+        - T1574.002

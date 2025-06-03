@@ -1,0 +1,4 @@
+Description: 'Обнаружено создание исполняемого файла в каталоге автозапуска (Startup).'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_3_2_10_03'
+    EventDescription: 'Обнаружено создание подозрительного файла автозапуска в директории Startup. Файл {object.name} был создан в каталоге автозагрузки пользователя.'

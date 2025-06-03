@@ -1,0 +1,34 @@
+ContentAutoName: Task_6_2_2_10_03
+ExpertContext:
+  Created: 03.06.2025
+  Updated: 03.06.2025
+  KnowledgeHolders:
+    - '10_03'
+  Usecases:
+    - Detect credential dumping via cmdkey.exe abuse.
+    - Uncover multi-stage attacks involving JScript loaders (cscript.exe) followed by credential storage and payload execution.
+    - Monitor for misuse of native Windows utilities to bypass application whitelisting.
+  Falsepositives:
+    - Legitimate use of cmdkey.exe by automated backup or deployment tools.
+    - Scripted use by privileged users for legitimate credential management.
+    - False positives may occur if attackers mimic standard system command lines.
+  References:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-1-process-create
+  Improvements:
+    - Add detection logic for related file creation (*.zip, i.exe) and process spawning from %TEMP%.
+    - Integrate with endpoint telemetry to extract and analyze contents of ZIP files used in conjunction with cmdkey.
+    - Enhance correlation with parent-child process chain analysis for full attack chain visibility.
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID: []
+ObjectId: SEC-CR-174558934
+EventDescriptions:
+  - Criteria: correlation_name = "Task_6_2_2_10_03"
+    LocalizationId: corrname_Task_6_2_2_10_03
+ContentRelations:
+  Implements:
+    ATTACK:
+      credential-access:
+        - T1555
+      defense-evasion:
+        - T1036

@@ -1,0 +1,4 @@
+Description: 'Detects creation of an executable file in the Startup folder.'
+EventDescriptions:
+  - LocalizationId: 'corrname_Task_6_3_2_10_03'
+    EventDescription: "A suspicious startup file was created in the user's Startup folder. The file {object.name} was placed in the autostart directory."
